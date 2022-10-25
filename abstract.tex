@@ -1,0 +1,5 @@
+
+\begin{abstract}
+We present the Rubin Observatory system for data storage/retrieval and pipelined code execution. The layer for data storage and retrieval is named the Butler. It consists of a relational database, known as the registry, to keep track of metadata and relations, and a system to manage where the data is located, named the datastore. Together these systems create an abstraction layer that science algorithms can be written against. This abstraction layer manages the complexities of the large data volumes expected and allows algorithms to be written independently, yet be tied together automatically into a coherent processing pipeline. This system consists of tools which execute these pipelines by transforming them into execution graphs which contain concrete data stored in the Butler. The pipeline infrastructure is designed to be scalable in nature, allowing execution on environments ranging from a laptop all the way up to multi-facility data centers. This presentation will focus on the data management aspects as well as an overview on the creation of pipelines and the corresponding execution graphs.
+\end{abstract}
+
