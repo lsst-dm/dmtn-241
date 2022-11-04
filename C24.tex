@@ -1,3 +1,48 @@
+
+\documentclass[11pt,twoside]{article}
+
+% Do NOT use ANY packages other than asp2014.
+\usepackage{asp2014}
+%if you add acronyms - but asp say no other imports
+%\usepackage{longtable}
+
+\aspSuppressVolSlug
+\resetcounters
+
+% References must all use BibTeX entries in a .bibfile.
+% References must be cited in the text using \citet{} or \citep{}.
+% Do not use \cite{}.
+% See ManuscriptInstructions.pdf for more details
+\bibliographystyle{asp2014}
+\def\procspie{Proc.\ SPIE} % Proceedings of the SPIE
+
+
+% Package imports go here.
+
+% Local commands go here.
+
+% See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
+%\markboth{auth}{short title}
+
+\begin{document}
+\input{authors}
+
+% leave the ssindex lines commented for the editors to enable them, use Index.py to suggest yours
+%\ssindex{FOOBAR!conference!ADASS 2022}
+%\ssindex{FOOBAR!organisations!ASP}
+
+%\ssindex{LSST}
+%\ssindex{observatories!ground-based!Rubin}
+%\ssindex{data!management!workflows}
+
+\title{Data management and execution systems for the Rubin Observatory Science Pipelines}
+\hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
+
+
+\begin{abstract}
+    We present the Rubin Observatory system for data storage/retrieval and pipelined code execution. The layer for data storage and retrieval is named the Butler. It consists of a relational database, known as the registry, to keep track of metadata and relations, and a system to manage where the data is located, named the datastore. Together these systems create an abstraction layer that science algorithms can be written against. This abstraction layer manages the complexities of the large data volumes expected and allows algorithms to be written independently, yet be tied together automatically into a coherent processing pipeline. This system consists of tools which execute these pipelines by transforming them into execution graphs which contain concrete data stored in the Butler. The pipeline infrastructure is designed to be scalable in nature, allowing execution on environments ranging from a laptop all the way up to multi-facility data centers. This presentation will focus on the data management aspects as well as an overview on the creation of pipelines and the corresponding execution graphs.
+\end{abstract}
+
 \section{Introduction}
 %This is the LSST overview paper: \cite{2008arXiv0805.2366I}.
 
@@ -41,4 +86,10 @@ Once the middleware has constructed a pipeline graph, that graph can be consumed
 \section{Conclusions}
 The Butler and middleware allows Rubin to abstract all data access from task authors or end users. Abstracting data access also allows allows data processing to be abstracted using PipelineTasks and Pipelines. These abstractions allow more rapid, orthogonal development to take place, as well as providing a mechanism to use the same code base to scale from individual development needs all the way up to running the complete survey. These systems are being used in processing Subaru's Hyper-SuprimeGam PDR4, replacing the older Rubin middleware used for previous release [citation needed]. It is also being used in NASA's SPHEREx mission, which has its own data model. The code is all open source and available from the Python package index.
 
-\vskip 0.4in
+\acknowledgments This material or work is supported in part by the National Science Foundation through Cooperative Agreement AST-1258333 and Cooperative Support Agreement AST1836783 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
+
+% For ADASS submission use only local bib.
+\bibliography{C24}
+
+
+\end{document}
