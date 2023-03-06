@@ -3,6 +3,7 @@
 
 % Do NOT use ANY packages other than asp2014.
 \usepackage{asp2014}
+\pdfoutput=1
 %if you add acronyms - but asp say no other imports
 %\usepackage{longtable}
 \raggedbottom
@@ -26,7 +27,6 @@
 \markboth{Lust et al.}{Rubin Observatory Pipeline Execution}
 
 \begin{document}
-\input{authors}
 
 % leave the ssindex lines commented for the editors to enable them, use Index.py to suggest yours
 
@@ -36,6 +36,34 @@
 
 \title{Data management and execution systems for the Rubin Observatory Science Pipelines}
 \hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
+
+\author{Nate~B.~Lust,$^1$ Tim~Jenness,$^2$ James~F.~Bosch,$^1$ Andrei~Salnikov,$^3$ Nathan~M.~Pease,$^3$ Michelle~Gower,$^4$ Mikolaj~Kowalik,$^4$ Gregory~P.~Dubois-Felsmann,$^5$ Fritz~Mueller,$^3$ and Pim~Schellart$^1$}
+\affil{$^1$Department of Astrophysical Sciences, Princeton University, Princeton, NJ 08544, USA}
+\affil{$^2$Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA}
+\affil{$^3$SLAC National Accelerator Laboratory,  2575 Sand Hill Rd., Menlo Park, CA 94025, USA}
+\affil{$^4$NCSA, University of Illinois at Urbana-Champaign, 1205 W.\ Clark St., Urbana, IL 61801, USA}
+\affil{$^5$IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125, USA}
+\paperauthor{Nate~B.~Lust}{}{0000-0002-4122-9384}{Department of Astrophysical Sciences}{}{Princeton}{NJ}{08544}{USA}
+\paperauthor{Tim~Jenness}{}{0000-0001-5982-167X}{Rubin Observatory Project Office}{}{Tucson}{AZ}{85719}{USA}
+\paperauthor{James~F.~Bosch}{}{0000-0003-2759-5764}{Department of Astrophysical Sciences}{}{Princeton}{NJ}{08544}{USA}
+\paperauthor{Andrei~Salnikov}{}{0000-0002-3623-0161}{SLAC National Accelerator Laboratory}{}{Menlo Park}{CA}{94025}{USA}
+\paperauthor{Nathan~M.~Pease}{}{0000-0002-9701-5975}{SLAC National Accelerator Laboratory}{}{Menlo Park}{CA}{94025}{USA}
+\paperauthor{Michelle~Gower}{}{0000-0001-9513-6987}{NCSA}{}{Urbana}{IL}{61801}{USA}
+\paperauthor{Mikolaj~Kowalik}{}{0000-0002-9801-5969}{NCSA}{}{Urbana}{IL}{61801}{USA}
+\paperauthor{Gregory~P.~Dubois-Felsmann}{}{0000-0003-1598-6979}{IPAC}{}{Pasadena}{CA}{91125}{USA}
+\paperauthor{Fritz~Mueller}{}{0000-0002-7061-4644}{SLAC National Accelerator Laboratory}{}{Menlo Park}{CA}{94025}{USA}
+\paperauthor{Pim~Schellart}{}{0000-0002-8324-0880}{Department of Astrophysical Sciences}{}{Princeton}{NJ}{08544}{USA}
+% Yes they said to have these index commands commented out.
+%\aindex{Lust,~N.~B.}
+%\aindex{Jenness,~T.}
+%\aindex{Bosch,~J.~F.}
+%\aindex{Salnikov,~A.}
+%\aindex{Pease,~N.~M.}
+%\aindex{Gower,~M.}
+%\aindex{Kowalik,~M.}
+%\aindex{Dubois-Felsmann,~G.~P.}
+%\aindex{Mueller,~F.}
+%\aindex{Schellart,~P.}
 
 
 \begin{abstract}
@@ -85,8 +113,37 @@ The Butler and middleware allow Rubin to abstract all data access from task auth
 
 \acknowledgments This material or work is supported in part by the National Science Foundation through Cooperative Agreement AST-1258333 and Cooperative Support Agreement AST1836783 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
 
-% For ADASS submission use only local bib.
-\bibliography{C24}
+% For arXiv submission use integrated bibliography
+\begin{thebibliography}{}
+    \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+    \expandafter\ifx\csname url\endcsname\relax
+      \def\url#1{\texttt{#1}}\fi
+    \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+    \providecommand{\eprint}[2][]{\url{#2}}
+
+    \bibitem[{{Bosch} et~al.(2018)}]{2018PASJ...70S...5B}
+    {Bosch}, J., et~al. 2018, \pasj, 70, S5. \eprint{arXiv:1705.06766}
+
+    \bibitem[{Gower et~al.(2023)}]{P52_adassxxxii}
+    Gower, M., et~al. 2023, in ADASS XXXII, edited by S.~{Gaudet}, S.~{Gwyn},
+      P.~{Dowler}, D.~{Bohlender}, \& A.~{Hincks} (San Francisco: ASP), vol. TBD of
+      ASP Conf.\ Ser., TBD. \eprint{arXiv:2211.15795}
+
+    \bibitem[{{Ivezi{\'c}} et~al.(2019)}]{2019ApJ...873..111I}
+    {Ivezi{\'c}}, {\v Z}., et~al. 2019, \apj, 873, 111. \eprint{arXiv:0805.2366}
+
+    \bibitem[{{Jenness} et~al.(2022)}]{2022SPIE12189E..11J}
+    {Jenness}, T., et~al. 2022, in Software and Cyberinfrastructure for Astronomy
+      VII, vol. 12189 of Proc.\ SPIE, 1218911. \eprint{arXiv:2206.14941}
+
+    \bibitem[{O'Mullane et~al.(2023)}]{I08_adassxxxii}
+    O'Mullane, W., et~al. 2023, in ADASS XXXII, edited by S.~{Gaudet}, S.~{Gwyn},
+      P.~{Dowler}, D.~{Bohlender}, \& A.~{Hincks} (San Francisco: ASP), vol. TBD of
+      ASP Conf. Ser., TBD. \eprint{arXiv:2211.13611}
+
+    \end{thebibliography}
+
+
 
 
 \end{document}
